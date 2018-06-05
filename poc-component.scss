@@ -1,0 +1,10 @@
+:local(.scope) {
+  .text, :global(.text) {
+    color: red;
+  }
+  :global {
+    .other {
+      color: green;
+    }
+  }
+} 

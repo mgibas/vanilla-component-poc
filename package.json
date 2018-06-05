@@ -1,0 +1,38 @@
+{
+  "name": "vanilla-component-poc",
+  "version": "0.0.1",
+  "description": "Sane web component",
+  "main": "vanilla-component.js",
+  "repository": "https://github.com/mgibas/vanilla-component-poc.git",
+  "author": "Maciej Gibas <gibasmaciej@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@polymer/lit-element": "^0.5.1"
+  },
+  "devDependencies": {
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^0.28.11",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "mini-css-extract-plugin": "^0.4.0",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.21.0",
+    "uglifyjs-webpack-plugin": "^1.2.5",
+    "webpack": "^4.10.0",
+    "webpack-cli": "^2.1.4",
+    "webpack-dev-server": "^3.1.4",
+    "webpack-serve": "^1.0.2"
+  },
+  "scripts": {
+    "demo": "webpack-dev-server"
+  }
+}
