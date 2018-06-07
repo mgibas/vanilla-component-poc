@@ -1,5 +1,3 @@
-const path = require('path')
-
 module.exports = {
   module: {
     rules: [
@@ -11,7 +9,7 @@ module.exports = {
           presets: [
             ['env', {
               'targets': {
-                'browsers': ['last 2 Chrome versions']
+                'browsers': ['cover 95% in US', 'not dead', 'not chrome < 60']
               }
             }]
           ]
@@ -20,23 +18,21 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [{
-          loader: "style-loader"
-        }, {
-          loader: "css-loader",
+          loader: 'css-loader',
           options: {
             modules: true,
             camelCase: true
           }
         }, {
-          loader: "sass-loader"
+          loader: 'sass-loader'
         }]
       }
     ]
   },
-  entry: './poc-component.js',
+  entry: './src/poc-component.js',
   output: {
     filename: 'poc-component.js',
-    path: path.resolve(__dirname, 'dist')
+    path: __dirname
   },
   mode: 'production'
 }

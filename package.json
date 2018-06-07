@@ -7,9 +7,6 @@
   "author": "Maciej Gibas <gibasmaciej@gmail.com>",
   "license": "MIT",
   "private": false,
-  "dependencies": {
-    "@polymer/lit-element": "^0.5.1"
-  },
   "devDependencies": {
     "@webcomponents/webcomponentsjs": "^2.0.0",
     "babel-core": "^6.26.3",
@@ -29,10 +26,9 @@
     "uglifyjs-webpack-plugin": "^1.2.5",
     "webpack": "^4.10.0",
     "webpack-cli": "^2.1.4",
-    "webpack-dev-server": "^3.1.4",
     "webpack-serve": "^1.0.2"
   },
   "scripts": {
-    "demo": "webpack-dev-server"
+    "demo": "webpack-serve"
   }
 }

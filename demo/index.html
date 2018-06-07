@@ -2,10 +2,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <title>vanilla-component demo</title>
-  <script type="module" src="/dist/poc-component.js" defer></script>
+  <script src="/node_modules/@webcomponents/webcomponentsjs/bundles/webcomponents-ce.js"></script>
+  <script src="/node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+  <script type="module" src="/poc-component.js" defer></script>
   <style>
-    poc-component .root .text {
-      color: blue;
+    poc-component [part="text"] {
+      color: blue !important;
+    }
+    poc-component [part="child"] {
+      color: blue !important;
     }
   </style>
 </head>
