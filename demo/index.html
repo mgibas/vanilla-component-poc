@@ -2,19 +2,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <title>vanilla-component demo</title>
-  <script src="/node_modules/@webcomponents/webcomponentsjs/bundles/webcomponents-ce.js"></script>
-  <script src="/node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
-  <script type="module" src="/poc-component.js" defer></script>
+  <script type="module" src="/basic-component.js" defer></script>
   <style>
-    poc-component [part="text"] {
-      color: blue !important;
-    }
-    poc-component [part="child"] {
+    basic-component [part="text"] {
       color: blue !important;
     }
   </style>
 </head>
 <body>
-  <poc-component></poc-component>
+  <p> Basic component that demo couple things: </p>
+  <ul>
+    <li>Define component using custom markup</li>
+    <li>Render template (static in this case)</li>
+    <li>CSS is writen using seperate scss file</li>
+    <li>Styles are scoped which prevents leaking style out</li>
+    <li>Hard to use scoped styles (random class names) to style internals of this component</li>
+    <li>Exposes [part="..."] attribute to ease stylling from outside</li>
+  </ul>
+  <basic-component></basic-component>
+
+  <p>Dynamicly added nodes</p>
+  <button onclick="add();">Add</button>
+  <button onclick="remove();">Remove</button>
+  <ul id="dynamicList">
+  </ul>
 </body>
+  <script>
+    function add() {
+      let li = document.createElement('li')
+      li.appendChild(document.createElement('basic-component'))
+      document.querySelector('#dynamicList').appendChild(li)
+    }
+    function remove() {
+      let list = document.querySelector('#dynamicList')
+      let item = list.querySelector('li')
+      list.removeChild(item)
+    }
+  </script>
 </html>

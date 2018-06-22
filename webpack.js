@@ -29,9 +29,9 @@ module.exports = {
       }
     ]
   },
-  entry: './src/poc-component.js',
+  entry: './src/basic-component.js',
   output: {
-    filename: 'poc-component.js',
+    filename: 'basic-component.js',
     path: __dirname
   },
   mode: 'production'
