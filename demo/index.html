@@ -2,7 +2,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <title>vanilla-component demo</title>
-  <script type="module" src="/basic-component.js" defer></script>
+  <script src="/basic-component.js" defer></script>
+  <script src="/clock-component.js" defer></script>
+  <script src="/counter-component.js" defer></script>
+  <script src="/state-component.js" defer></script>
   <style>
     basic-component [part="text"] {
       color: blue !important;
@@ -26,7 +29,33 @@
   <button onclick="remove();">Remove</button>
   <ul id="dynamicList">
   </ul>
-</body>
+  <h1>Clock Component</h1>
+  <clock-component></clock-component>
+
+  <h1>Counter component</h1>
+  <ul>
+    <li>Property exposed by attribute</li>
+    <li>Reacts to attribute changes</li>
+    <li>Reacts to property changes</li>
+    <li>Reflec property value to attribute</li>
+    <li>Expose method as public api</li>
+  </ul>
+  <counter-component id="counter" counter="9"></counter-component>
+  <button onclick="increment();">Increment</button>
+  <button onclick="decrement();">Decrement</button>
+  <button onclick="incrementProp();">Increment Prop</button>
+  <button onclick="decrementProp();">Decrement Prop</button>
+  <button onclick="incrementMethod();">Increment Method</button>
+  <button onclick="decrementMethod();">Decrement Method</button>
+
+  <h1>State component</h1>
+  <ul>
+    <li>Reacts to changes in simple state store</li>
+  </ul>
+  <state-component id="state"></state-component>
+  <button onclick="flipFoo();">Change Foo</button>
+  <button onclick="flipBar();">Change Bar</button>
+
   <script>
     function add() {
       let li = document.createElement('li')
@@ -38,5 +67,36 @@
       let item = list.querySelector('li')
       list.removeChild(item)
     }
+    function increment() {
+      let counter = document.querySelector('#counter')
+      counter.setAttribute('counter', ++counter.counter)
+    }
+    function decrement() {
+      let counter = document.querySelector('#counter')
+      counter.setAttribute('counter', --counter.counter)
+    }
+    function incrementProp() {
+      let counter = document.querySelector('#counter')
+      counter.counter++
+    }
+    function decrementProp() {
+      let counter = document.querySelector('#counter')
+      counter.counter--
+    }
+    function incrementMethod() {
+      let counter = document.querySelector('#counter')
+      counter.inc()
+    }
+    function decrementMethod() {
+      let counter = document.querySelector('#counter')
+      counter.dec()
+    }
+    function flipFoo() {
+      document.querySelector('#state').flipFoo()
+    }
+    function flipBar() {
+      document.querySelector('#state').flipBar()
+    }
   </script>
+</body>
 </html>

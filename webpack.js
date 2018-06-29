@@ -29,9 +29,14 @@ module.exports = {
       }
     ]
   },
-  entry: './src/basic-component.js',
+  entry: {
+    'basic-component': './src/basic-component.js',
+    'counter-component': './src/counter-component.js',
+    'state-component': './src/state-component.js',
+    'clock-component': './src/clock-component.js'
+  },
   output: {
-    filename: 'basic-component.js',
+    filename: '[name].js',
     path: __dirname
   },
   mode: 'production'
